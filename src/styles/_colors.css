@@ -8,13 +8,13 @@
 .bg-primary-light {
   background-color: var(--primary-light);
 }
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
 
 .heading-dark {
   color: var(--heading-dark);
 }
 .text-dark {
   color: var(--text-dark);
-}
-.link-dark {
-  color: var(--link);
 }

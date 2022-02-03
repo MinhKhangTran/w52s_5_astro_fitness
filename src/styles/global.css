@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 @import url("./_reset.css");
 @import url("./_a11y.css");
 @import url("./_typography.css");
@@ -6,34 +6,46 @@
 @import url("./_media.css");
 @import url("./_colors.css");
 
+@font-face {
+  font-family: Tahoma;
+  src: url(../../public/assets/fonts/Tahoma\ Regular\ font.ttf);
+}
+
 :root {
   /* font-family */
-  --ff-heading: "Quicksand", sans-serif;
-  --ff-body: "Open Sans", sans-serif;
+  --ff-heading: "Staatliches", cursive;
+  --ff-body: "Tahoma", sans-serif;
 
   /* colors */
-  --primary: #fb7185;
-  --primary-light: #ffe4e6;
-  --heading-dark: #292524;
-  --text-dark: #44403c;
-  --light: #fffafa;
-  --link: #9f1239;
+  --primary: #840b0b;
+  --primary-light: #ef4444;
+  --heading-dark: #171717;
+  --text-dark: #404040;
+  --light: #fef2f2;
+  --white: #fafafa;
+  --gray: #d1d1d1;
+  --primary-dark: #5a0707;
 
   /* font-sizes */
   --h1: 3rem;
-  --h2: 1.5rem;
-  --h3: 1.125rem;
+  --h2: 2.25rem;
+  --h3: 1.5rem;
   --body-lg: 1.125rem;
   --body: 1rem;
-  --nav: 1.125rem;
+  --nav: 1rem;
 }
 
+@media (--sm) {
+  :root {
+    /* font-sizes */
+
+    --h2: 1.87rem;
+  }
+}
 @media (--md) {
   :root {
     /* font-sizes */
-    --h1: 4.5rem;
     --h2: 2.25rem;
-    --h3: 1.5rem;
   }
 }
 /* Body */
@@ -43,7 +55,7 @@ body {
   font-size: var(--body);
   color: var(--text-dark);
   line-height: 1.5;
-  background-color: var(--light);
+  background-color: #f5f5f4;
   overflow-x: hidden;
   /* min-height: 100vh;
 	  overflow-x: hidden;
