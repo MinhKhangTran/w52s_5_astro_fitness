@@ -1,0 +1,32 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+export interface Props {
+  title: string;
+  description: string;
+  permalink?: string;
+  current?: string;
+  canonicalURL?: string | URL;
+}
+const { title, description, permalink, current, canonicalURL } = Astro.props;
+---
+
+<html lang="de-DE">
+  <head>
+    <BaseHead {title} {description} {canonicalURL} {permalink} />
+  </head>
+
+  <body class={current} data-barba="wrapper">
+    <a class="skip-to-content" href="#main-content">Skip to content</a>
+    <Navigation {current} />
+
+    <slot />
+    <Footer />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"
+    ></script>
+  </body>
+</html>
