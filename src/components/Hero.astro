@@ -1,1 +1,83 @@
-<section id="hero" aria-label="hero">hero</section>
+<section id="hero" aria-label="hero">
+  <article class="hero_image">
+    <div class="image_wrapper">
+      <picture class="hero_image_child">
+        <source
+          media="(min-width: 48em)"
+          srcset="assets/images/webp/hero-lg-min.webp"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 36em)"
+          srcset="assets/images/webp/hero-md-min.webp"
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 36em)"
+          srcset="assets/images/webp/hero-sm-min.webp"
+          type="image/webp"
+        />
+
+        <img
+          srcset="assets/images/jpg/hero-sm-min.jpg, assets/images/jpg/hero-md-min.jpg, assets/images/jpg/hero-lg-min.jpg"
+          sizes="(max-width: 36em), (min-width: 36em),(min-width: 48em)"
+          src="assets/images/jpg/hero-lg-min.jpg"
+          alt="A wonderful gym"
+        />
+      </picture>
+    </div>
+    <div class="container hero_text">
+      <h1 class="h1 text-white">Your local Gym</h1>
+      <p class="text-white body-lg">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua.
+      </p>
+      <div class="button_wrapper">
+        <button class="btn btn-primary">Become a member</button>
+        <button class="btn btn-outline">Arrange Trial Training</button>
+      </div>
+    </div>
+  </article>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    .hero_image {
+      position: relative;
+    }
+    img {
+      height: calc(100vh - 80px);
+      object-fit: cover;
+      width: 100vw;
+      @media (--sm) {
+        height: calc(75vh - 76px);
+      }
+    }
+    .hero_text {
+      position: absolute;
+      inset: 0;
+      height: 50%;
+      margin: auto;
+      text-align: center;
+      @media (--sm) {
+        height: 30%;
+      }
+      p {
+        margin-block: 1rem 2rem;
+      }
+    }
+    .button_wrapper {
+      button {
+        margin-inline: auto;
+      }
+      .btn-outline {
+        margin-top: 1rem;
+        @media (--sm) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+</style>

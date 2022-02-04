@@ -5,6 +5,7 @@
 @import url("./_utilities.css");
 @import url("./_media.css");
 @import url("./_colors.css");
+@import url("./components/button.css");
 
 @font-face {
   font-family: Tahoma;
@@ -61,4 +62,15 @@ body {
 	  overflow-x: hidden;
 	  display: grid;
 	  grid-template-rows: min-content 1fr; */
+}
+
+a:focus-visible {
+  outline: 2px dotted white;
+  outline-offset: 1rem;
+}
+
+button:focus-visible {
+  outline: 2px dotted white;
+  outline-offset: 0.5rem;
+  border-radius: 0;
 }

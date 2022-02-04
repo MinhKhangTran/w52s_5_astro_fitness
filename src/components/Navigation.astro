@@ -54,7 +54,9 @@ const { current } = Astro.props as Props;
       {navArray.map((nav) => {
         return (
           <li>
-            <a class="uppercase nav_link text-white">{nav.text}</a>
+            <a href={nav.url} class="uppercase nav_link text-white">
+              {nav.text}
+            </a>
           </li>
         );
       })}
