@@ -64,8 +64,15 @@
       @media (--sm) {
         height: 30%;
       }
+      @media (--md) {
+        text-align: left;
+        height: 40%;
+      }
       p {
         margin-block: 1rem 2rem;
+        @media (--md) {
+          width: 500px;
+        }
       }
     }
     .button_wrapper {
@@ -76,6 +83,7 @@
         margin-top: 1rem;
         @media (--sm) {
           margin-top: 0;
+          margin-left: 1rem;
         }
       }
     }

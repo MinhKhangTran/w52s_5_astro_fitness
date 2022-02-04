@@ -39,13 +39,14 @@
 @media (--sm) {
   :root {
     /* font-sizes */
-
+    --h1: 4.5rem;
     --h2: 1.87rem;
   }
 }
 @media (--md) {
   :root {
     /* font-sizes */
+
     --h2: 2.25rem;
   }
 }
