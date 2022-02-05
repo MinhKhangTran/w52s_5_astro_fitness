@@ -33,43 +33,112 @@ const blogArray = [
 ];
 ---
 
-<section id="blog" aria-label="blog">
-  <h2>The latest and greatest</h2>
-  <p>
+<section id="blog" class="container" aria-label="blog">
+  <h2 class="h2 heading-dark text-center">The latest and greatest</h2>
+  <p class="text-center subtitle">
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor.
   </p>
-  <article>
-    <picture class="gallery-1">
-      <source
-        media="(min-width: 48em)"
-        srcset="/assets/images/webp/blog1-lg-min.webp"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 36em)"
-        srcset="/assets/images/webp/blog1-md-min.webp"
-        type="image/webp"
-      />
-      <source
-        media="(max-width: 36em)"
-        srcset="/assets/images/webp/blog1-sm-min.webp"
-        type="image/webp"
-      />
+  <div class="blog_grid">
+    {blogArray.map((blog) => {
+      const {
+        id,
+        image_lg,
+        image_md,
+        image_sm,
+        image_lg_jpg,
+        image_md_jpg,
+        image_sm_jpg,
+        title,
+      } = blog;
 
-      <img
-        srcset="/assets/images/jpg/blog1-sm-min.jpg, /assets/images/jpg/blog1-md-min.jpg, /assets/images/jpg/blog1-lg-min.jpg"
-        sizes="(max-width: 36em), (min-width: 36em),(min-width: 48em)"
-        src="/assets/images/jpg/blog1-lg-min.jpg"
-        alt="Training"
-      />
-    </picture>
-    <h3>Training</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-      sed diam nonumy eirmod tempor.
-    </p>
-    <a href="/blog">Read more <span class="sr-only">about it</span></a>
-  </article>
+      return (
+        <article>
+          <picture class={`gallery-${id}`}>
+            <source
+              media="(min-width: 48em)"
+              srcset={image_lg}
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 36em)"
+              srcset={image_md}
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 36em)"
+              srcset={image_sm}
+              type="image/webp"
+            />
+
+            <img
+              srcset={`${image_sm_jpg},${image_md_jpg},${image_lg_jpg}`}
+              sizes="(max-width: 36em), (min-width: 36em),(min-width: 48em)"
+              src={image_lg_jpg}
+              alt={title}
+            />
+          </picture>
+          <div class="card_footer">
+            <h3 class="h3 heading-dark">{title}</h3>
+            <p class="card_footer-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor. Lorem ipsum dolor sit amet, consetetur
+              sadipscing elitr, sed diam nonumy eirmod tempor.
+            </p>
+            <a href="/blog">
+              Read more <span class="sr-only">{title}</span>
+            </a>
+          </div>
+        </article>
+      );
+    })}
+  </div>
 </section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    --pt: 6rem;
+    margin-top: var(--pt);
+    @media (--sm) {
+      --pt: 5rem;
+    }
+    @media (--md) {
+      --pt: 7rem;
+    }
+  }
+  .subtitle {
+    padding-bottom: 2rem;
+  }
+  .blog_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @media (--sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (--md) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  article {
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  picture img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .card_footer {
+    padding: 1rem;
+  }
+  .card_footer-text {
+    padding-block: 0.5rem 1rem;
+  }
+  a {
+    color: var(--primary-light);
+    text-decoration: none;
+  }
+</style>
