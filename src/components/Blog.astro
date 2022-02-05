@@ -1,1 +1,75 @@
-<section id="blog" aria-label="blog">blog</section>
+---
+const blogArray = [
+  {
+    id: 1,
+    image_lg: "/assets/images/webp/blog1-lg-min.webp",
+    image_md: "/assets/images/webp/blog1-md-min.webp",
+    image_sm: "/assets/images/webp/blog1-sm-min.webp",
+    image_lg_jpg: "/assets/images/jpg/blog1-lg-min.jpg",
+    image_md_jpg: "/assets/images/jpg/blog1-md-min.jpg",
+    image_sm_jpg: "/assets/images/jpg/blog1-sm-min.jpg",
+    title: "Training",
+  },
+  {
+    id: 2,
+    image_lg: "/assets/images/webp/blog2-lg-min.webp",
+    image_md: "/assets/images/webp/blog2-md-min.webp",
+    image_sm: "/assets/images/webp/blog2-sm-min.webp",
+    image_lg_jpg: "/assets/images/jpg/blog2-lg-min.jpg",
+    image_md_jpg: "/assets/images/jpg/blog2-md-min.jpg",
+    image_sm_jpg: "/assets/images/jpg/blog2-sm-min.jpg",
+    title: "Meal Prep",
+  },
+  {
+    id: 3,
+    image_lg: "/assets/images/webp/blog3-lg-min.webp",
+    image_md: "/assets/images/webp/blog3-md-min.webp",
+    image_sm: "/assets/images/webp/blog3-sm-min.webp",
+    image_lg_jpg: "/assets/images/jpg/blog3-lg-min.jpg",
+    image_md_jpg: "/assets/images/jpg/blog3-md-min.jpg",
+    image_sm_jpg: "/assets/images/jpg/blog3-sm-min.jpg",
+    title: "Diet",
+  },
+];
+---
+
+<section id="blog" aria-label="blog">
+  <h2>The latest and greatest</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor.
+  </p>
+  <article>
+    <picture class="gallery-1">
+      <source
+        media="(min-width: 48em)"
+        srcset="/assets/images/webp/blog1-lg-min.webp"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 36em)"
+        srcset="/assets/images/webp/blog1-md-min.webp"
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 36em)"
+        srcset="/assets/images/webp/blog1-sm-min.webp"
+        type="image/webp"
+      />
+
+      <img
+        srcset="/assets/images/jpg/blog1-sm-min.jpg, /assets/images/jpg/blog1-md-min.jpg, /assets/images/jpg/blog1-lg-min.jpg"
+        sizes="(max-width: 36em), (min-width: 36em),(min-width: 48em)"
+        src="/assets/images/jpg/blog1-lg-min.jpg"
+        alt="Training"
+      />
+    </picture>
+    <h3>Training</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      sed diam nonumy eirmod tempor.
+    </p>
+    <a href="/blog">Read more <span class="sr-only">about it</span></a>
+  </article>
+</section>

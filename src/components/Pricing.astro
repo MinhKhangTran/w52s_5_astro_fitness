@@ -1,1 +1,153 @@
-<section id="pricing" aria-label="pricing">pricing</section>
+<section class="container" id="pricing" aria-label="pricing">
+  <h2 class="text-center h2 heading-dark">Simple Pricing</h2>
+  <div class="card_wrapper">
+    <article class="bg-white">
+      <h3 class="h3">Dayticket</h3>
+      <p class="geld">10€</p>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor.
+      </p>
+      <div class="line"></div>
+      {Array.from({ length: 3 }, (_, index) => {
+        return (
+          <div class="card_footer-text">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_115_17)">
+                <path
+                  d="M31.2564 5.23014C30.2663 4.23873 28.6586 4.23936 27.6672 5.23014L11.5131 21.3848L4.33338 14.2051C3.34197 13.2137 1.73493 13.2137 0.743522 14.2051C-0.247881 15.1965 -0.247881 16.8035 0.743522 17.7949L9.71784 26.7693C10.2132 27.2647 10.8628 27.513 11.5125 27.513C12.1621 27.513 12.8123 27.2653 13.3077 26.7693L31.2564 8.81993C32.2478 7.82921 32.2478 6.22148 31.2564 5.23014Z"
+                  fill="#EF4444"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_115_17">
+                  <rect width="32" height="32" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        );
+      })}
+    </article>
+    <article class="bg-white pop">
+      <div class="pill uppercase">Most Popular</div>
+      <h3 class="h3">Basic Plan</h3>
+      <div class="preis">
+        <p class="geld">25€</p>
+        <span class="geld_plan">/monthly</span>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor.
+      </p>
+      <div class="line"></div>
+      {Array.from({ length: 4 }, (_, index) => {
+        return (
+          <div class="card_footer-text">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_115_17)">
+                <path
+                  d="M31.2564 5.23014C30.2663 4.23873 28.6586 4.23936 27.6672 5.23014L11.5131 21.3848L4.33338 14.2051C3.34197 13.2137 1.73493 13.2137 0.743522 14.2051C-0.247881 15.1965 -0.247881 16.8035 0.743522 17.7949L9.71784 26.7693C10.2132 27.2647 10.8628 27.513 11.5125 27.513C12.1621 27.513 12.8123 27.2653 13.3077 26.7693L31.2564 8.81993C32.2478 7.82921 32.2478 6.22148 31.2564 5.23014Z"
+                  fill="#EF4444"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_115_17">
+                  <rect width="32" height="32" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        );
+      })}
+    </article>
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    padding-top: 6rem;
+    @media (--sm) {
+      padding-top: 5rem;
+    }
+    @media (--md) {
+      padding-top: 7rem;
+      padding-inline: 6.275rem;
+    }
+  }
+  article {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--light);
+    @media (--sm) {
+      margin-top: 2rem;
+    }
+  }
+
+  .card_wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    @media (--sm) {
+      flex-direction: row;
+    }
+  }
+  .pop {
+    border: 1px solid var(--primary-light);
+    position: relative;
+    margin-top: 3.25rem;
+    @media (--sm) {
+      margin-top: 2rem;
+    }
+  }
+  .pill {
+    position: absolute;
+    background-color: var(--primary-light);
+    padding: 0.5rem;
+    border-radius: 50px;
+    color: var(--white);
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+  .geld_plan {
+    color: #5c5c5c;
+  }
+  .preis {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--light);
+    margin-block: 2rem;
+    margin-inline: auto;
+  }
+  .geld {
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  .card_footer-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+</style>
