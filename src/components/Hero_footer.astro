@@ -28,9 +28,10 @@
     align-items: center;
     text-align: center;
     padding-block: 2rem;
-
+    gap: 2rem;
     @media (--sm) {
       flex-direction: row;
+      row-gap: 2rem;
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: start;
@@ -40,6 +41,9 @@
     p {
       width: 250px;
       padding-top: 0.5rem;
+    }
+    a {
+      color: var(--primary);
     }
   }
 </style>

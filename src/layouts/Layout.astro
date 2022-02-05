@@ -17,7 +17,7 @@ const { title, description, permalink, current, canonicalURL } = Astro.props;
     <BaseHead {title} {description} {canonicalURL} {permalink} />
   </head>
 
-  <body class={current} data-barba="wrapper">
+  <body class={current}>
     <a class="skip-to-content" href="#main-content">Skip to content</a>
     <Navigation {current} />
 

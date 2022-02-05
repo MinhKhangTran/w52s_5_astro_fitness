@@ -1,1 +1,94 @@
-<section id="features" aria-label="features">features</section>
+---
+const featArray = [
+  {
+    id: 1,
+    icon: "/assets/icons/machine.svg",
+    title: "Machine Training",
+  },
+  {
+    id: 2,
+    icon: "/assets/icons/weights.svg",
+    title: "Weight Training",
+  },
+  {
+    id: 3,
+    icon: "/assets/icons/paleton.svg",
+    title: "Cardio Training",
+  },
+  {
+    id: 4,
+    icon: "/assets/icons/trainingsplan.svg",
+    title: "Individual training plan",
+  },
+  {
+    id: 5,
+    icon: "/assets/icons/sauna.svg",
+    title: "Sauna",
+  },
+  {
+    id: 6,
+    icon: "/assets/icons/wifi.svg",
+    title: "Free wifi",
+  },
+];
+---
+
+<section class="container" id="features" aria-label="features">
+  <h2 class="h2 heading-dark">Everything you need</h2>
+  <div class="feat_grid">
+    {featArray.map((feat)=>{
+      const { icon,title } = feat;
+      return(
+          <article>
+            <img class="bg-light" src={icon} alt={title}>
+            <h3 class="h3">{title}</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+          </article>
+      )
+  })}
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    padding-top: 4rem;
+  }
+  h2 {
+    padding-bottom: 2rem;
+    @media (--sm) {
+      text-align: center;
+    }
+  }
+  .feat_grid {
+    display: grid;
+    @media (--sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (--md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  article {
+    padding-bottom: 2rem;
+    margin-inline: auto;
+  }
+  img {
+    padding: 12px;
+    border-radius: 4px;
+    width: 80px;
+    aspect-ratio: 1;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  h3 {
+    padding-top: 0.5rem;
+  }
+  p {
+    @media (--sm) {
+      width: 300px;
+    }
+    @media (--md) {
+      width: 250px;
+    }
+  }
+</style>

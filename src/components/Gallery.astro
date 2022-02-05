@@ -1,1 +1,96 @@
-<section id="gallery" aria-label="gallery">gallery</section>
+<section id="gallery" aria-label="gallery">
+  {Array.from({ length: 6 }, (_, index) => {
+    return (
+      <picture class={`gallery-${index + 1}`}>
+        <source
+          media="(min-width: 48em)"
+          srcset={`assets/images/webp/testi${index + 1}-lg-min.webp`}
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 36em)"
+          srcset={`assets/images/webp/testi${index + 1}-md-min.webp`}
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 36em)"
+          srcset={`assets/images/webp/testi${index + 1}-sm-min.webp`}
+          type="image/webp"
+        />
+
+        <img
+          srcset={`assets/images/jpg/testi${
+            index + 1
+          }-sm-min.jpg, assets/images/jpg/testi${
+            index + 1
+          }-md-min.jpg, assets/images/jpg/testi${index + 1}-lg-min.jpg`}
+          sizes="(max-width: 36em), (min-width: 36em),(min-width: 48em)"
+          src={`assets/images/jpg/testi${index + 1}-lg-min.jpg`}
+          alt={`Testi ${index + 1}`}
+        />
+      </picture>
+    );
+  })}
+</section>
+<div class="button-wrapper">
+  <a href="/course" class="btn btn-outline">See All Our Courses</a>
+</div>
+
+<style>
+  @import url("../styles/_media.css");
+  .gallery-1 {
+    grid-area: one;
+  }
+  .gallery-2 {
+    grid-area: two;
+  }
+  .gallery-3 {
+    grid-area: three;
+  }
+  .gallery-4 {
+    grid-area: four;
+  }
+  .gallery-5 {
+    grid-area: five;
+  }
+  .gallery-6 {
+    grid-area: six;
+  }
+  section {
+    display: grid;
+    padding-top: 4rem;
+    grid-template-areas:
+      "one" "two"
+      "three" "four"
+      "five" "six";
+    @media (--sm) {
+      padding-top: 3rem;
+      grid-template-areas:
+        "one two"
+        "three four"
+        "five six";
+    }
+
+    @media (--md) {
+      padding-top: 5rem;
+      grid-template-areas:
+        "one two three three"
+        "four four five six";
+    }
+  }
+  .gallery-1 img,
+  .gallery-2 img,
+  .gallery-5 img,
+  .gallery-6 img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    a {
+      text-decoration: none;
+    }
+  }
+</style>

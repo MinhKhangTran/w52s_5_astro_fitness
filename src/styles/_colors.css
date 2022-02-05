@@ -11,6 +11,9 @@
 .bg-primary-dark {
   background-color: var(--primary-dark);
 }
+.bg-light {
+  background-color: var(--light);
+}
 
 .heading-dark {
   color: var(--heading-dark);

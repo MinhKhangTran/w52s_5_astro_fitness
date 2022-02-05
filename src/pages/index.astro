@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Hero_footer from "../components/Hero_footer.astro";
+import Features from "../components/Features.astro";
+import Gallery from "../components/Gallery.astro";
 
 let title = "Astro Portfolio W52s #4";
 let description = "Astro Portfolio W52s #4";
@@ -13,5 +15,7 @@ let canonicalURL = Astro.request.canonicalURL;
   <main id="main-content" aria-label="main">
     <Hero />
     <Hero_footer />
+    <Features />
+    <Gallery />
   </main>
 </Layout>
