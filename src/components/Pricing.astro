@@ -87,13 +87,19 @@
     }
     @media (--md) {
       padding-top: 7rem;
-      padding-inline: 6.275rem;
+      padding-inline: 6rem;
     }
   }
   article {
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--light);
+    @media (--sm) {
+      margin-top: 2rem;
+    }
+  }
+  article:nth-child(1) {
+    margin-top: 1rem;
     @media (--sm) {
       margin-top: 2rem;
     }
