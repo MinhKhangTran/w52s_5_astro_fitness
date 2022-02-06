@@ -1,1 +1,138 @@
-<section id="contact" aria-label="contact">contact</section>
+<section class="container" id="contact" aria-label="contact">
+  <div class="text-wrapper">
+    <h2 class="h2 heading-dark">Any Questions? Ask us anything</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      sed diam nonumy eirmod tempor.
+    </p>
+  </div>
+  <div class="form_whole">
+    <form>
+      <div class="form_names">
+        <div class="form-wrapper">
+          <label for="firstName">First Name</label>
+          <input
+            required
+            type="text"
+            name="textfield"
+            id="firstName"
+            aria-describedby="required-message"
+          />
+          <div class="sr-only" id="required-message">
+            This field is required
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label for="lastName">Last Name</label>
+          <input
+            required
+            type="text"
+            name="textfield"
+            id="lastName"
+            aria-describedby="required-message"
+          />
+          <div class="sr-only" id="required-message">
+            This field is required
+          </div>
+        </div>
+      </div>
+      <div class="form-wrapper">
+        <label for="email">E-Mail</label>
+        <input
+          required
+          type="email"
+          name="textfield"
+          id="email"
+          aria-describedby="required-message"
+        />
+        <div class="sr-only" id="required-message">This field is required</div>
+      </div>
+      <div class="form-wrapper">
+        <label for="message">Your Message</label>
+        <textarea
+          rows="4"
+          cols="50"
+          id="message"
+          name="addresstext"
+          aria-describedby="required-message"></textarea>
+        <div class="sr-only" id="required-message">This field is required</div>
+      </div>
+      <div class="button_wrapper">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    --pt: 6rem;
+    padding-top: var(--pt);
+    @media (--sm) {
+      --pt: 5rem;
+    }
+    @media (--md) {
+      --pt: 7rem;
+      display: flex;
+      gap: 1rem;
+      & > * {
+        flex: 50%;
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    @media (--sm) {
+      text-align: left;
+    }
+  }
+  p {
+    text-align: center;
+    padding-block: 1rem 2rem;
+    @media (--sm) {
+      text-align: left;
+    }
+  }
+  .form_names {
+    @media (--sm) {
+      display: flex;
+      gap: 1rem;
+    }
+    & > * {
+      flex: 50%;
+    }
+  }
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 0.5rem;
+    }
+    input,
+    textarea {
+      border: 1px solid #d1d1d1;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+    }
+    input {
+      margin-bottom: 1.5rem;
+    }
+    textarea {
+      margin-bottom: 2rem;
+    }
+  }
+  .button_wrapper {
+    display: block;
+    width: 100%;
+    @media (--sm) {
+      display: flex;
+      width: 100px;
+      margin-left: auto;
+    }
+    button {
+      width: 100%;
+    }
+  }
+</style>
