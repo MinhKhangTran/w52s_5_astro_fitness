@@ -1,1 +1,107 @@
-<footer id="footer" aria-label="footer">footer</footer>
+<footer id="footer" class="bg-primary-dark">
+  <div class="container">
+    <div class="main-footer">
+      <a href="/">
+        <img
+          class="logo"
+          width="90"
+          src="/assets/logo.png"
+          alt="The Logo of Fitness"
+        />
+      </a>
+      <p class="main-footer-text text-white">Your local gym</p>
+      <div class="socials d-flex" style="--gap:1.5rem">
+        <a href="https://www.facebook.com">
+          <img width="48" src="/assets/icons/facebook.svg" alt="facebook" />
+        </a>
+        <a href="https://www.twitter.com">
+          <img width="48" src="/assets/icons/twitter.svg" alt="twitter" />
+        </a>
+        <a href="https://www.messenger.com">
+          <img width="48" src="/assets/icons/messenger.svg" alt="messenger" />
+        </a>
+      </div>
+    </div>
+    <div class="rest">
+      <div class="company text-white">
+        <p class="fw-bold uppercase h3">Company</p>
+        <ul class="flow">
+          <li>
+            <a href="#benefits">Benefits</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="legal text-white">
+        <h3 class="fw-bold uppercase h3">Legal</h3>
+        <ul class="flow">
+          <li>
+            <a href="#terms">Terms</a>
+          </li>
+          <li>
+            <a href="#privacy">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="text-center container text-white">
+    © FITNESS {new Date().getFullYear()}
+  </p>
+</footer>
+
+<style>
+  @import url("../styles/_media.css");
+  footer {
+    margin-top: 4rem;
+    @media (--sm) {
+      margin-top: 5rem;
+    }
+  }
+  .main-footer {
+    padding-block: 1.25rem;
+  }
+  .main-footer-text {
+    padding-block: 1rem;
+  }
+  .rest {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+  }
+  ul {
+    padding: 0;
+  }
+  li a {
+    text-decoration: none;
+    color: var(--dark);
+  }
+  p.text-center {
+    padding-block: 1rem;
+    border-top: 1px solid #dcdfe5;
+  }
+  @media (min-width: 768px) {
+    .main-footer {
+      padding-block: 2rem;
+    }
+    .main-footer-text {
+      width: 30ch;
+    }
+    div.container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .rest {
+      gap: 4rem;
+      padding-block: 2rem;
+    }
+  }
+</style>

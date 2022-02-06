@@ -62,11 +62,14 @@ const featArray = [
   }
   .feat_grid {
     display: grid;
+    gap: 1rem;
     @media (--sm) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
     @media (--md) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
     }
   }
   article {
@@ -82,13 +85,5 @@ const featArray = [
   }
   h3 {
     padding-top: 0.5rem;
-  }
-  p {
-    @media (--sm) {
-      width: 300px;
-    }
-    @media (--md) {
-      width: 250px;
-    }
   }
 </style>
