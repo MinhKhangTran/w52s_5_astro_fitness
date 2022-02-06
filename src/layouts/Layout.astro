@@ -28,5 +28,71 @@ const { title, description, permalink, current, canonicalURL } = Astro.props;
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"
     ></script>
+    <script>
+      const tlHero = gsap.timeline();
+
+      tlHero.fromTo(
+        ".hero_image_child",
+        { opacity: 0 },
+        { opacity: 1, duration: 1.5, ease: Power2.easeOut }
+      );
+      tlHero.fromTo(
+        ".hero_text",
+        { opacity: 0 },
+        { opacity: 1, duration: 1.5, ease: Power2.easeOut },
+        "<20%"
+      );
+      tlHero.fromTo(
+        ".hero_footer--box",
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, stagger: 0.5 },
+        "<10%"
+      );
+      // feat
+      const tlFeat = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#features",
+          // markers: { startColor: "blue", endColor: "blue" },
+          start: "-110%",
+        },
+      });
+      tlFeat.fromTo("#features", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
+      // gallery
+      const tlGallery = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#gallery",
+          // markers: { startColor: "blue", endColor: "blue" },
+          start: "-50%",
+        },
+      });
+      tlGallery.fromTo("#gallery", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
+      // pricing
+      const tlPricing = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#pricing",
+          // markers: { startColor: "blue", endColor: "blue" },
+          start: "-80%",
+        },
+      });
+      tlPricing.fromTo("#pricing", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
+      // blog
+      const tlBlog = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#blog",
+          // markers: { startColor: "blue", endColor: "blue" },
+          start: "-100%",
+        },
+      });
+      tlBlog.fromTo("#blog", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
+      // contact
+      const tlContact = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#contact",
+          // markers: { startColor: "blue", endColor: "blue" },
+          start: "-100%",
+        },
+      });
+      tlContact.fromTo("#contact", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
+    </script>
   </body>
 </html>
